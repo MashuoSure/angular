@@ -1,0 +1,25 @@
+
+<section>
+  <h2>正在进行<span id="todo">{{arrData.length-counter}}</span>
+  </h2>
+  <ul class="list">
+    <ng-container *ngFor='let item of arrData;let i =index;'>
+      <li *ngIf='!item.done'>
+        <input type="checkbox" (click)='change(i)'>
+        <p>{{item.title}}</p>
+        <button (click)='delData(i)' class="
+            btns"></button>
+      </li>
+    </ng-container>
+  </ul>
+  <h2>已经完成<span id="done">{{counter}}</span></h2>
+  <ul class="list list1">
+    <ng-container *ngFor="let item of arrData;let i = index;">
+      <li *ngIf='item.done'>
+        <input type="checkbox" checked="checked" (click)='change(i)'>
+        <p>{{item.title}}</p>
+        <button (click)='delData(i)' class="btns"></button>
+      </li>
+    </ng-container>
+  </ul>
+</section>

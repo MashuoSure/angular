@@ -1,0 +1,13 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div id="top">
+  <h2>todolist</h2>
+  <input type="text" (keydown)="fun($event)"[(ngModel)] = "txt" id="inputs"
+   placeholder="添加ToDo"/>
+</div>
+<h5>正在进行</h5>
+<ul id="running">
+  <li *ngFor ="let item of str;let i = index">
+    <input type="checkbox">{{str[i]}}
+    <button (click) = "del(i)">delete</button>
+  </li>
+</ul>
